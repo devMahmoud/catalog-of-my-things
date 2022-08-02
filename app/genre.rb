@@ -1,4 +1,4 @@
-require './music_album.rb'
+require './music_album'
 
 class Genre
   attr_accessor :items
