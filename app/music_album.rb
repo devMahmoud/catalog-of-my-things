@@ -1,4 +1,4 @@
-require './item.rb'
+require './item'
 
 class MusicAlbum < Item
   attr_accessor :on_spotify
@@ -19,4 +19,3 @@ class MusicAlbum < Item
     end
   end
 end
-
