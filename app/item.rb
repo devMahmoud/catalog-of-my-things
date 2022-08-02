@@ -1,5 +1,4 @@
 class Item
-
   attr_accessor :label
   attr_reader :genre, :author, :source, :publish_date, :archived
 
