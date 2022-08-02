@@ -1,5 +1,6 @@
 class Item
-  attr_reader :genre, :author, :source, :label, :publish_date
+  attr_accessor :label
+  attr_reader :genre, :author, :source, :publish_date
 
   def initialize(date, archived: false)
     @id = Random.rand(1..1000)
@@ -17,10 +18,6 @@ class Item
 
   def add_source(source)
     @source = source
-  end
-
-  def add_label(label)
-    @label = label
   end
 
   def move_to_archive
