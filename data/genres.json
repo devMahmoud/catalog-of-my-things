@@ -5,23 +5,10 @@
     "items": [
       {
         "json_class": "MusicAlbum",
-        "id": 335,
+        "id": 450,
         "date": 1989,
         "author": "Megadeth",
         "genre": "Rock"
-      }
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "name": "Pop",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 171,
-        "date": 2000,
-        "author": "Luis fonsi",
-        "genre": "Pop"
       }
     ]
   },
@@ -31,10 +18,23 @@
     "items": [
       {
         "json_class": "MusicAlbum",
-        "id": 554,
-        "date": 2010,
+        "id": 729,
+        "date": 2015,
         "author": "Placebo",
         "genre": "Indie"
+      }
+    ]
+  },
+  {
+    "json_class": "Genre",
+    "name": "Reggae",
+    "items": [
+      {
+        "json_class": "MusicAlbum",
+        "id": 198,
+        "date": 2005,
+        "author": "Morodo",
+        "genre": "Reggae"
       }
     ]
   }

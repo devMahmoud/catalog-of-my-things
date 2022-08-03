@@ -1,7 +1,7 @@
 require './music_album'
 require './genre'
 require 'json'
-require './store_handlers.rb'
+require './store_handlers'
 
 class App
   include Store
@@ -10,8 +10,9 @@ class App
   def initialize
     @books = []
     @games = []
-    @genres = File.exist?('../data/genres.json') ? JSON.parse(File.read('../data/genres.json'), create_additions: true) : []
+    @genres = File.exist?('../data/genres.json') ? genre_store : []
     @music = File.exist?('../data/music.json') ? genre_music : []
+    p @genres
   end
 
   def list_all_books; end
@@ -24,30 +25,31 @@ class App
 
   def list_of_games; end
 
+  # rubocop:disable Style/ClassEqualityComparison
   def list_all_genres
     select_filter = []
-    puts "Please select for what item you want see the Genres? (book, music, game) : "
+    puts 'Please select for what item you want see the Genres? (book, music, game) : '
     selection = gets.chomp.downcase
-    if selection == 'book'
+    case selection
+    when 'book'
       selection = 'Book'
-    elsif selection == 'music'
+    when 'music'
       selection = 'MusicAlbum'
-    elsif selection == 'game'
+    when 'game'
       selection == 'Game'
     else
-      puts "Please select the correct option"
+      puts 'Please select the correct option'
       list_all_genres
     end
     @genres.each do |genre|
-      if genre.items[0].class.name == selection
-        select_filter << genre
-      end
+      select_filter << genre if genre.items[0].class.name == selection
     end
     select_filter.each do |genre|
       puts "[Genre] : #{genre.name}"
     end
   end
 
+  # rubocop:enable Style/ClassEqualityComparison
   def list_all_labels; end
 
   def list_all_authors; end

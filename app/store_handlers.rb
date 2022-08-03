@@ -1,4 +1,8 @@
 module Store
+  def genre_store
+    JSON.parse(File.read('../data/genres.json'), create_additions: true)
+  end
+
   def genre_music
     added_gender = []
     music_convert = JSON.parse(File.read('../data/music.json'), create_additions: true)

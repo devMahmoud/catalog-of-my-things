@@ -17,7 +17,7 @@ class MusicAlbum < Item
       false
     end
   end
-  
+
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
