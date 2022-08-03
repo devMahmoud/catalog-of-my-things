@@ -1,0 +1,23 @@
+[
+  {
+    "json_class": "MusicAlbum",
+    "id": 335,
+    "date": 1989,
+    "author": "Megadeth",
+    "genre": "Rock"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 171,
+    "date": 2000,
+    "author": "Luis fonsi",
+    "genre": "Pop"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 554,
+    "date": 2010,
+    "author": "Placebo",
+    "genre": "Indie"
+  }
+]

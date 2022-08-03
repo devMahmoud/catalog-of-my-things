@@ -1,14 +1,17 @@
 require './music_album'
 require './genre'
+require 'json'
+require './store_handlers.rb'
 
 class App
+  include Store
   attr_reader :books, :music, :games
 
   def initialize
     @books = []
-    @music = []
     @games = []
-    @genres = []
+    @genres = File.exist?('../data/genres.json') ? JSON.parse(File.read('../data/genres.json'), create_additions: true) : []
+    @music = File.exist?('../data/music.json') ? genre_music : []
   end
 
   def list_all_books; end
@@ -22,7 +25,25 @@ class App
   def list_of_games; end
 
   def list_all_genres
+    select_filter = []
+    puts "Please select for what item you want see the Genres? (book, music, game) : "
+    selection = gets.chomp.downcase
+    if selection == 'book'
+      selection = 'Book'
+    elsif selection == 'music'
+      selection = 'MusicAlbum'
+    elsif selection == 'game'
+      selection == 'Game'
+    else
+      puts "Please select the correct option"
+      list_all_genres
+    end
     @genres.each do |genre|
+      if genre.items[0].class.name == selection
+        select_filter << genre
+      end
+    end
+    select_filter.each do |genre|
       puts "[Genre] : #{genre.name}"
     end
   end
@@ -52,4 +73,9 @@ class App
   end
 
   def add_game; end
+
+  def save_data
+    File.write('../data/music.json', JSON.pretty_generate(@music))
+    File.write('../data/genres.json', JSON.pretty_generate(@genres))
+  end
 end
