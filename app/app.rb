@@ -7,6 +7,7 @@ require './label'
 require 'json'
 require './handlers'
 
+# rubocop:disable Metrics/ClassLength
 class App
   attr_reader :books, :music, :games, :genres, :labels, :authors
 
@@ -90,19 +91,19 @@ class App
     publisher = gets.chomp
     label = Label.new(title)
     print 'Author Name: '
-    authorInput = gets.chomp
-    authorArr = authorInput.split
+    author_input = gets.chomp
+    author_arr = author_input.split
     print "Source (e.g. 'From a friend', 'Online shop'): "
     source = gets.chomp
     print "Genre (e.g 'Comedy', 'Thriller'): "
     genre = Genre.new(gets.chomp)
-    author = Author.new(authorArr[0], authorArr[1])
+    author = Author.new(author_arr[0], author_arr[1])
     book = Book.new(
       publisher,
       cover_state,
       publish_date,
       label.title,
-      authorInput,
+      author_input,
       source,
       genre.name
     )
@@ -148,9 +149,9 @@ class App
     last_play_at = gets.chomp.to_i
     label = Label.new(title)
     print 'Author Name: '
-    authorInput = gets.chomp
-    authorArr = authorInput.split
-    author = Author.new(authorArr[0], authorArr[1])
+    author_input = gets.chomp
+    author_arr = author_input.split
+    author = Author.new(author_arr[0], author_arr[1])
     print "Source (e.g. 'From a friend', 'Online shop'): "
     source = gets.chomp
     print "Genre (e.g 'Comedy', 'Thriller'): "
@@ -160,7 +161,7 @@ class App
       last_play_at,
       publish_date,
       label.title,
-      authorInput,
+      author_input,
       source,
       genre.name
     )
@@ -185,3 +186,4 @@ class App
     File.write('../data/music.json', JSON.pretty_generate(@music))
   end
 end
+# rubocop:enable Metrics/ClassLength
