@@ -8,7 +8,7 @@ require 'json'
 require './handlers'
 
 class App
-  attr_reader :books, :music, :games, :genres, :labels
+  attr_reader :books, :music, :games, :genres, :labels, :authors
 
   include Handlers
 
@@ -55,7 +55,7 @@ class App
 
   def list_of_games
     games.each do |game|
-      puts "Title: #{game.label.title}  Multiplayer: #{game.multiplayer} Genre: #{game.genre}"
+      puts "Title: #{game.label.title}  Multiplayer: #{game.multiplayer} Genre: #{game.genre.name}"
     end
     puts
   end
@@ -90,21 +90,25 @@ class App
     publisher = gets.chomp
     label = Label.new(title)
     print 'Author Name: '
-    author = gets.chomp
+    authorInput = gets.chomp
+    authorArr = authorInput.split
     print "Source (e.g. 'From a friend', 'Online shop'): "
     source = gets.chomp
     print "Genre (e.g 'Comedy', 'Thriller'): "
     genre = Genre.new(gets.chomp)
+    author = Author.new(authorArr[0], authorArr[1])
     book = Book.new(
       publisher,
       cover_state,
       publish_date,
       label.title,
-      author,
+      authorInput,
       source,
       genre.name
     )
+    author.add_item(book)
     label.add_item(book)
+    authors.push(author)
     labels.push(label)
     genres.push(genre)
     @books.push(book)
@@ -144,7 +148,9 @@ class App
     last_play_at = gets.chomp.to_i
     label = Label.new(title)
     print 'Author Name: '
-    author = gets.chomp
+    authorInput = gets.chomp
+    authorArr = authorInput.split
+    author = Author.new(authorArr[0], authorArr[1])
     print "Source (e.g. 'From a friend', 'Online shop'): "
     source = gets.chomp
     print "Genre (e.g 'Comedy', 'Thriller'): "
@@ -154,12 +160,14 @@ class App
       last_play_at,
       publish_date,
       label.title,
-      author,
+      authorInput,
       source,
       genre.name
     )
+    author.add_item(game)
     label.add_item(game)
     genre.add_item(game)
+    authors.push(author)
     labels.push(label)
     genres.push(genre)
     @games.push(game)
