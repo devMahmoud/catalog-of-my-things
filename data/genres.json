@@ -6,13 +6,5 @@
   {
     "json_class": "Genre",
     "name": "Pop"
-  },
-  {
-    "json_class": "Genre",
-    "name": "triller"
-  },
-  {
-    "json_class": "Genre",
-    "name": "Comedy"
   }
 ]

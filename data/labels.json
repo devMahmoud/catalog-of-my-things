@@ -1,26 +1,14 @@
 [
   {
     "json_class": "Label",
-    "title": "Zecola",
+    "title": "Un dia mas",
     "color": "white",
-    "id": 186
+    "id": 213
   },
   {
     "json_class": "Label",
-    "title": "Book 2",
+    "title": "Te vi venir",
     "color": "white",
-    "id": 408
-  },
-  {
-    "json_class": "Label",
-    "title": "book 3",
-    "color": "white",
-    "id": 536
-  },
-  {
-    "json_class": "Label",
-    "title": "book",
-    "color": "white",
-    "id": 740
+    "id": 608
   }
 ]

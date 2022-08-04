@@ -1,44 +1,18 @@
 [
   {
     "json_class": "MusicAlbum",
-    "id": 446,
-    "date": 1989,
-    "author": "Iron maiden",
+    "id": 237,
+    "date": 2018,
+    "author": "Viniloversus",
+    "title": "Un dia mas",
     "genre": "Rock"
   },
   {
     "json_class": "MusicAlbum",
-    "id": 52,
+    "id": 772,
     "date": 2005,
-    "author": "Shakira",
+    "author": "Sin banderas",
+    "title": "Te vi venir",
     "genre": "Pop"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 188,
-    "date": 1999,
-    "author": "Iron maiden",
-    "genre": "Rock"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 840,
-    "date": 2000,
-    "author": "Backstreet boys",
-    "genre": "Pop"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 262,
-    "date": 1999,
-    "author": "Nirvana",
-    "genre": "Rock"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 619,
-    "date": 120,
-    "author": "Killers",
-    "genre": "Rock"
   }
 ]

@@ -12,7 +12,9 @@ module Handlers
     music_convert.map do |music|
       filter_genres = @genres.filter { |genre| genre.name == music.genre }
       filter_authors = @authors.filter { |author| author.first_name == music.author }
+      filter_labels = @labels.filter { |label| label.title == music.label }
       new_music = MusicAlbum.new(music.publish_date)
+      new_music.label = filter_labels[0]
       new_music.add_genre(filter_genres[0])
       new_music.add_author(filter_authors[0])
       new_music.id = music.id
@@ -51,6 +53,23 @@ module Handlers
       author = Author.new(input, '')
       album.add_author(author)
       @authors << author unless @authors.include? author
+    end
+  end
+
+  def if_label_empty(input, album)
+    label = Label.new(input)
+    album.label = label
+    @labels << label
+  end
+
+  def if_has_label(arr, input, album)
+    selected = arr.select { |label| label.title == input }
+    if selected.length.positive?
+      album.label = selected[0]
+    else
+      label = Label.new(input)
+      album.label = label
+      @labels << label unless @labels.include? label
     end
   end
 end
