@@ -12,13 +12,13 @@ class App
     @music = []
     @games = []
     @genres = []
-    @labels = []
+    @labels = File.exist?('../data/labels.json') ? JSON.parse(File.read('../data/labels.json'), create_additions: true) : []
   end
 
   def list_all_books
     p books
     books.each do |book|
-      puts "Title: #{book.label}  Author: #{book.author}"
+      puts "Title: #{book.label.title}  Author: #{book.author} Genre: #{book.genre}"
     end
     puts
   end
@@ -65,7 +65,8 @@ class App
       author,
       source,
       genre.name
-      )
+    )
+    label.add_item(book)
     labels.push(label)
     genres.push(genre)
     @books.push(book)
@@ -93,6 +94,7 @@ class App
 
   def save_data
     File.write('../data/books.json', JSON.pretty_generate(@books))
+    File.write('../data/labels.json', JSON.pretty_generate(@labels))
   end
 
   def add_game; end
