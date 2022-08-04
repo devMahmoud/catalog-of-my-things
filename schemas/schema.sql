@@ -20,18 +20,32 @@ CREATE TABLE music_album (
   on_spotify BOOLEAN NOT NULL
 ) INHERITS (item);
 
-/* Create table genre */
+/* Create genre table */
 
 CREATE TABLE genre (
   id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   name VARCHAR
 )
 
-/* Alter table item to create relationship with genre */
+/* Create author table */
+
+CREATE TABLE author (
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  first_name VARCHAR,
+  last_name VARCHAR
+)
+
+/* Alter table item to create relationship  */
 
 ALTER TABLE item
 ADD genre_id INT;
 
 ALTER TABLE item
+ADD author_id INT;
+
+ALTER TABLE item
 ADD FOREIGN KEY (genre_id) REFERENCES genre(id);
+
+ALTER TABLE item
+ADD FOREIGN KEY (author_id) REFERENCES author(id);
 
