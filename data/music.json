@@ -1,23 +1,30 @@
 [
   {
     "json_class": "MusicAlbum",
-    "id": 450,
+    "id": 446,
     "date": 1989,
-    "author": "Megadeth",
+    "author": "Iron maiden",
     "genre": "Rock"
   },
   {
     "json_class": "MusicAlbum",
-    "id": 729,
-    "date": 2015,
-    "author": "Placebo",
-    "genre": "Indie"
+    "id": 52,
+    "date": 2005,
+    "author": "Shakira",
+    "genre": "Pop"
   },
   {
     "json_class": "MusicAlbum",
-    "id": 198,
-    "date": 2005,
-    "author": "Morodo",
-    "genre": "Reggae"
+    "id": 188,
+    "date": 1999,
+    "author": "Iron maiden",
+    "genre": "Rock"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 840,
+    "date": 2000,
+    "author": "Backstreet boys",
+    "genre": "Pop"
   }
 ]

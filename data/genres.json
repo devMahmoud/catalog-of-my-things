@@ -1,41 +1,10 @@
 [
   {
     "json_class": "Genre",
-    "name": "Rock",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 450,
-        "date": 1989,
-        "author": "Megadeth",
-        "genre": "Rock"
-      }
-    ]
+    "name": "Rock"
   },
   {
     "json_class": "Genre",
-    "name": "Indie",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 729,
-        "date": 2015,
-        "author": "Placebo",
-        "genre": "Indie"
-      }
-    ]
-  },
-  {
-    "json_class": "Genre",
-    "name": "Reggae",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 198,
-        "date": 2005,
-        "author": "Morodo",
-        "genre": "Reggae"
-      }
-    ]
+    "name": "Pop"
   }
 ]

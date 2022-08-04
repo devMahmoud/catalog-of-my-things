@@ -23,7 +23,7 @@ class MusicAlbum < Item
       JSON.create_id => self.class.name,
       'id' => id,
       'date' => publish_date,
-      'author' => author,
+      'author' => author.first_name,
       'genre' => genre.name
     }.to_json(*args)
   end
@@ -31,8 +31,8 @@ class MusicAlbum < Item
   def self.json_create(data)
     music_album = new(data['date'])
     music_album.id = data['id']
-    music_album.add_author(data['author'])
-    music_album.add_genre(data['genre'])
+    music_album.author = data['author']
+    music_album.genre = data['genre']
     music_album
   end
   private :can_be_archived?
