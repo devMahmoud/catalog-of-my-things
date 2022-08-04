@@ -58,6 +58,7 @@ class Main
       app.add_game
       show_menu
     when 10
+      app.save_data
       abort('Thank you for using this app!')
     else
       puts 'Invalid selection'
