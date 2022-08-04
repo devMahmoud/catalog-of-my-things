@@ -19,11 +19,12 @@ class MusicAlbum < Item
   end
 
   def to_json(*args)
+    p @genre
     {
       JSON.create_id => self.class.name,
       'id' => id,
       'date' => publish_date,
-      'author' => author,
+      'author' => author.first_name,
       'genre' => genre.name
     }.to_json(*args)
   end

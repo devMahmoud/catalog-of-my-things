@@ -1,7 +1,7 @@
 [
   {
-    "json_class": "Genre",
-    "name": "Rock",
+    "json_class": "Author",
+    "name": "Megadeth",
     "items": [
       {
         "json_class": "MusicAlbum",

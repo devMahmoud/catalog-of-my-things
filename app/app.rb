@@ -1,5 +1,6 @@
 require './music_album'
 require './genre'
+require './author'
 require 'json'
 require './store_handlers'
 require './usefull_handlers'
@@ -11,8 +12,10 @@ class App
   def initialize
     @books = []
     @games = []
+    @authors = File.exist?('../data/authors.json') ? authors_store : []
     @genres = File.exist?('../data/genres.json') ? genre_store : []
     @music = File.exist?('../data/music.json') ? genre_music : []
+    p @music[0].author
   end
 
   def list_all_books; end
@@ -67,7 +70,9 @@ class App
     print 'What is the genre (e.g Rock, Pop... etc) : '
     genre_input = gets.chomp.capitalize
     album = MusicAlbum.new(date, spotify: on_spotify)
-    album.add_author(author_input)
+    author = Author.new(author_input, '')
+    author.add_item(album)
+    @authors << author
     @genres.empty? ? if_genre_empty(genre_input, album) : if_has_genre(@genres, genre_input, album)
     music << album
   end
@@ -75,7 +80,8 @@ class App
   def add_game; end
 
   def save_data
-    File.write('../data/music.json', JSON.pretty_generate(@music))
+    File.write('../data/authors.json', JSON.pretty_generate(@authors))
     File.write('../data/genres.json', JSON.pretty_generate(@genres))
+    File.write('../data/music.json', JSON.pretty_generate(@music))
   end
 end

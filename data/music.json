@@ -1,44 +1,9 @@
 [
   {
     "json_class": "MusicAlbum",
-    "id": 281,
+    "id": 43,
     "date": 1989,
     "author": "Megadeth",
     "genre": "Rock"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 24,
-    "date": 1988,
-    "author": "Metallica",
-    "genre": "Rock"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 725,
-    "date": 2005,
-    "author": "Placebo",
-    "genre": "Indie"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 286,
-    "date": 2015,
-    "author": "Arctic monkeys",
-    "genre": "Indie"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 208,
-    "date": 2000,
-    "author": "Backstreet boys",
-    "genre": "Pop"
-  },
-  {
-    "json_class": "MusicAlbum",
-    "id": 523,
-    "date": 2006,
-    "author": "Sin banderas",
-    "genre": "Balads"
   }
 ]
