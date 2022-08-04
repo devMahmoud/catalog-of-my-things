@@ -2,9 +2,10 @@ require './music_album'
 require './genre'
 require 'json'
 require './store_handlers'
+require './usefull_handlers'
 
 class App
-  include Store
+  include Store, Handlers
   attr_reader :books, :music, :games
 
   def initialize
@@ -12,7 +13,6 @@ class App
     @games = []
     @genres = File.exist?('../data/genres.json') ? genre_store : []
     @music = File.exist?('../data/music.json') ? genre_music : []
-    p @genres
   end
 
   def list_all_books; end
@@ -66,11 +66,9 @@ class App
     on_spotify = spotify_ask == 'y'
     print 'What is the genre (e.g Rock, Pop... etc) : '
     genre_input = gets.chomp.capitalize
-    genre = Genre.new(genre_input)
     album = MusicAlbum.new(date, spotify: on_spotify)
     album.add_author(author_input)
-    genre.add_item(album)
-    @genres << genre unless @genres.include? genre
+    @genres.empty? ? if_genre_empty(genre_input, album) : if_has_genre(@genres, genre_input, album)
     music << album
   end
 
