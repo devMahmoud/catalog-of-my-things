@@ -24,6 +24,7 @@ class MusicAlbum < Item
       'id' => id,
       'date' => publish_date,
       'author' => author.first_name,
+      'title' => label.title,
       'genre' => genre.name
     }.to_json(*args)
   end
@@ -33,6 +34,7 @@ class MusicAlbum < Item
     music_album.id = data['id']
     music_album.author = data['author']
     music_album.genre = data['genre']
+    music_album.label = data['title']
     music_album
   end
   private :can_be_archived?

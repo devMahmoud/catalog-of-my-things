@@ -17,6 +17,12 @@ class App
   def initialize
     @authors = File.exist?('../data/authors.json') ? authors_store : []
     @genres = File.exist?('../data/genres.json') ? genre_store : []
+    @labels = if File.exist?('../data/labels.json')
+                JSON.parse(File.read('../data/labels.json'),
+                           create_additions: true)
+              else
+                []
+              end
     @music = File.exist?('../data/music.json') ? genre_music : []
     @books = if File.exist?('../data/books.json')
                JSON.parse(File.read('../data/books.json'),
@@ -30,12 +36,6 @@ class App
              else
                []
              end
-    @labels = if File.exist?('../data/labels.json')
-                JSON.parse(File.read('../data/labels.json'),
-                           create_additions: true)
-              else
-                []
-              end
   end
   # rubocop:enable Metrics/MethodLength
   # rubocop:enable Metrics/PerceivedComplexity
@@ -49,7 +49,7 @@ class App
 
   def list_all_music_albums
     @music.each do |song|
-      puts "[Author] : #{song.author.first_name} [Publish Date] : #{song.publish_date}  [Genre] : #{song.genre.name}"
+      puts "[Author] : #{song.author.first_name} [Title] : #{song.label.title} [Date] : #{song.publish_date}"
     end
   end
 
@@ -116,7 +116,9 @@ class App
   def add_music_album
     print 'Please enter the author: '
     author_input = gets.chomp.capitalize
-    print 'Please enter the date: '
+    print 'Please enter the title of the album: '
+    label_input = gets.chomp.capitalize
+    print 'Please enter the date (year): '
     date = gets.chomp.to_i
     print 'Is listed in spotify? (y/n): '
     spotify_ask = gets.chomp
@@ -126,6 +128,7 @@ class App
     album = MusicAlbum.new(date, spotify: on_spotify)
     @authors.empty? ? if_author_empty(author_input, album) : if_has_author(@authors, author_input, album)
     @genres.empty? ? if_genre_empty(genre_input, album) : if_has_genre(@genres, genre_input, album)
+    @labels.empty? ? if_label_empty(label_input, album) : if_has_label(@labels, label_input, album)
     music << album
   end
 
