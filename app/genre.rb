@@ -12,4 +12,15 @@ class Genre
     items << item unless items.include? item
     item.add_genre(self)
   end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'name' => @name
+    }.to_json(*args)
+  end
+
+  def self.json_create(genre)
+    new(genre['name'])
+  end
 end

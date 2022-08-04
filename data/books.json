@@ -31,5 +31,16 @@
     "source": "online",
     "genre": "comedy",
     "id": 58
+  },
+  {
+    "json_class": "Book",
+    "title": "book",
+    "publisher": "masdasd",
+    "cover_state": "good",
+    "publish_date": 456798,
+    "author": "aklsdjasd",
+    "source": "from a friend",
+    "genre": "Comedy",
+    "id": 357
   }
 ]

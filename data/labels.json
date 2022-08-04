@@ -16,5 +16,11 @@
     "title": "book 3",
     "color": "white",
     "id": 536
+  },
+  {
+    "json_class": "Label",
+    "title": "book",
+    "color": "white",
+    "id": 740
   }
 ]

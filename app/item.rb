@@ -1,6 +1,6 @@
 class Item
-  attr_accessor :label
-  attr_reader :genre, :author, :source, :publish_date, :archived
+  attr_accessor :label, :id, :author, :genre
+  attr_reader :source, :publish_date, :archived
 
   # rubocop:disable Metrics/ParameterLists
   def initialize(date, label = nil, author = nil, source = nil, genre = nil, id = Random.rand(1..1000), archived: false)
