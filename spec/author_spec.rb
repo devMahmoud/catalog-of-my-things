@@ -1,5 +1,5 @@
-require_relative '../app/author.rb'
-require_relative '../app/game.rb'
+require_relative '../app/author'
+require_relative '../app/game'
 
 describe Author do
   context 'When testing Author class' do
