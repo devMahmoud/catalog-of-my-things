@@ -2,6 +2,7 @@ require './music_album'
 require './genre'
 require './author'
 require './book'
+require './game'
 require './label'
 require 'json'
 require './handlers'
@@ -11,6 +12,8 @@ class App
 
   include Handlers
 
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/PerceivedComplexity
   def initialize
     @authors = File.exist?('../data/authors.json') ? authors_store : []
     @genres = File.exist?('../data/genres.json') ? genre_store : []
@@ -21,7 +24,12 @@ class App
              else
                []
              end
-    @games = []
+    @games = if File.exist?('../data/games.json')
+               JSON.parse(File.read('../data/games.json'),
+                          create_additions: true)
+             else
+               []
+             end
     @labels = if File.exist?('../data/labels.json')
                 JSON.parse(File.read('../data/labels.json'),
                            create_additions: true)
@@ -29,6 +37,8 @@ class App
                 []
               end
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/PerceivedComplexity
 
   def list_all_books
     books.each do |book|
@@ -43,7 +53,12 @@ class App
     end
   end
 
-  def list_of_games; end
+  def list_of_games
+    games.each do |game|
+      puts "Title: #{game.label.title}  Multiplayer: #{game.multiplayer} Genre: #{game.genre}"
+    end
+    puts
+  end
 
   def list_all_genres
     @genres.each do |genre|
@@ -114,13 +129,48 @@ class App
     music << album
   end
 
+  # rubocop:disable Metrics/MethodLength
+  def add_game
+    print 'Game Name: '
+    title = gets.chomp
+    print 'Is it a multiplayer game? [y/n]: '
+    multiplayer = %w[y Y Yes yes].include? gets.chomp ? true : false
+    print 'Publish Date (year only): '
+    publish_date = gets.chomp.to_i
+    print 'Last play at (year only): '
+    last_play_at = gets.chomp.to_i
+    label = Label.new(title)
+    print 'Author Name: '
+    author = gets.chomp
+    print "Source (e.g. 'From a friend', 'Online shop'): "
+    source = gets.chomp
+    print "Genre (e.g 'Comedy', 'Thriller'): "
+    genre = Genre.new(gets.chomp)
+    game = Game.new(
+      multiplayer,
+      last_play_at,
+      publish_date,
+      label.title,
+      author,
+      source,
+      genre.name
+    )
+    label.add_item(game)
+    genre.add_item(game)
+    labels.push(label)
+    genres.push(genre)
+    @games.push(game)
+    puts 'Game created successfully'
+    puts
+  end
+  # rubocop:enable Metrics/MethodLength
+
   def save_data
     File.write('../data/books.json', JSON.pretty_generate(@books))
+    File.write('../data/games.json', JSON.pretty_generate(@games))
     File.write('../data/labels.json', JSON.pretty_generate(@labels))
     File.write('../data/authors.json', JSON.pretty_generate(@authors))
     File.write('../data/genres.json', JSON.pretty_generate(@genres))
     File.write('../data/music.json', JSON.pretty_generate(@music))
   end
-
-  def add_game; end
 end

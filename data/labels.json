@@ -22,5 +22,17 @@
     "title": "book",
     "color": "white",
     "id": 740
+  },
+  {
+    "json_class": "Label",
+    "title": "GTA V",
+    "color": "white",
+    "id": 958
+  },
+  {
+    "json_class": "Label",
+    "title": "Mafia",
+    "color": "white",
+    "id": 109
   }
 ]
