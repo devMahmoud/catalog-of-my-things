@@ -1,16 +1,18 @@
 require './music_album'
 require './genre'
 require './book'
+require './label'
 require 'json'
 
 class App
-  attr_reader :books, :music, :games
+  attr_reader :books, :music, :games, :genres, :labels
 
   def initialize
     @books = File.exist?('../data/books.json') ? JSON.parse(File.read('../data/books.json'), create_additions: true) : []
     @music = []
     @games = []
     @genres = []
+    @labels = []
   end
 
   def list_all_books
@@ -40,21 +42,32 @@ class App
   def list_all_authors; end
 
   def add_book
+    print 'Book Title: '
+    title = gets.chomp
     print 'Cover State [good/bad]: '
     cover_state = gets.chomp
     print 'Publish Date (year only): '
     publish_date = gets.chomp.to_i
     print 'Publisher: '
     publisher = gets.chomp
-    book = Book.new(publisher, cover_state, publish_date)
-    print 'Book Title: '
-    book.label = gets.chomp
+    label = Label.new(title)
     print 'Author Name: '
-    book.add_author gets.chomp
-    print "Genre (e.g 'Comedy', 'Thriller'): "
-    book.add_genre gets.chomp
+    author = gets.chomp
     print "Source (e.g. 'From a friend', 'Online shop'): "
-    book.add_source gets.chomp
+    source = gets.chomp
+    print "Genre (e.g 'Comedy', 'Thriller'): "
+    genre = Genre.new(gets.chomp)
+    book = Book.new(
+      publisher,
+      cover_state,
+      publish_date,
+      label.title,
+      author,
+      source,
+      genre.name
+      )
+    labels.push(label)
+    genres.push(genre)
     @books.push(book)
     puts 'Book created successfully'
     puts

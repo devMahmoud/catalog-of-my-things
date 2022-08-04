@@ -1,0 +1,12 @@
+[
+  {
+    "json_class": "Book",
+    "title": "Zecola",
+    "publisher": "Dar",
+    "cover_state": "good",
+    "publish_date": 2010,
+    "author": "Mahmoud",
+    "source": "friend",
+    "genre": "comedy"
+  }
+]
