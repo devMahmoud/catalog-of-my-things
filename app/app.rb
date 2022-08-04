@@ -8,11 +8,21 @@ class App
   attr_reader :books, :music, :games, :genres, :labels
 
   def initialize
-    @books = File.exist?('../data/books.json') ? JSON.parse(File.read('../data/books.json'), create_additions: true) : []
+    @books = if File.exist?('../data/books.json')
+               JSON.parse(File.read('../data/books.json'),
+                          create_additions: true)
+             else
+               []
+             end
     @music = []
     @games = []
     @genres = []
-    @labels = File.exist?('../data/labels.json') ? JSON.parse(File.read('../data/labels.json'), create_additions: true) : []
+    @labels = if File.exist?('../data/labels.json')
+                JSON.parse(File.read('../data/labels.json'),
+                           create_additions: true)
+              else
+                []
+              end
   end
 
   def list_all_books
@@ -45,6 +55,7 @@ class App
 
   def list_all_authors; end
 
+  # rubocop:disable Metrics/MethodLength
   def add_book
     print 'Book Title: '
     title = gets.chomp
@@ -77,6 +88,7 @@ class App
     puts 'Book created successfully'
     puts
   end
+  # rubocop:enable Metrics/MethodLength
 
   def add_music_album
     print 'Please enter the author: '

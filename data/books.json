@@ -20,5 +20,16 @@
     "source": "friend",
     "genre": "comedy",
     "id": 139
+  },
+  {
+    "json_class": "Book",
+    "title": "book 3",
+    "publisher": "me",
+    "cover_state": "good",
+    "publish_date": 2020,
+    "author": "Mahmoud",
+    "source": "online",
+    "genre": "comedy",
+    "id": 58
   }
 ]
