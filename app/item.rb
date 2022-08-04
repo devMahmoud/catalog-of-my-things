@@ -2,11 +2,17 @@ class Item
   attr_accessor :label
   attr_reader :genre, :author, :source, :publish_date, :archived
 
-  def initialize(date, archived: false)
-    @id = Random.rand(1..1000)
+  # rubocop:disable Metrics/ParameterLists
+  def initialize(date, label = nil, author = nil, source = nil, genre = nil, id = Random.rand(1..1000), archived: false)
+    @id = id
+    @label = label
     @publish_date = date
     @archived = archived
+    @author = author
+    @source = source
+    @genre = genre
   end
+  # rubocop:enable Metrics/ParameterLists
 
   def add_genre(genre)
     @genre = genre

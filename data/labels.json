@@ -1,0 +1,20 @@
+[
+  {
+    "json_class": "Label",
+    "title": "Zecola",
+    "color": "white",
+    "id": 186
+  },
+  {
+    "json_class": "Label",
+    "title": "Book 2",
+    "color": "white",
+    "id": 408
+  },
+  {
+    "json_class": "Label",
+    "title": "book 3",
+    "color": "white",
+    "id": 536
+  }
+]
