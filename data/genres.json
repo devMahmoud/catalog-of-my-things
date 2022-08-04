@@ -1,15 +1,14 @@
 [
   {
     "json_class": "Genre",
-    "name": "Rock",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 43,
-        "date": 1989,
-        "author": "Megadeth",
-        "genre": "Rock"
-      }
-    ]
+    "name": "Rock"
+  },
+  {
+    "json_class": "Genre",
+    "name": "Pop"
+  },
+  {
+    "json_class": "Genre",
+    "name": "Reggae"
   }
 ]

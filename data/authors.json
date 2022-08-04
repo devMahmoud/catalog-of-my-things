@@ -1,15 +1,14 @@
 [
   {
     "json_class": "Author",
-    "name": "Megadeth",
-    "items": [
-      {
-        "json_class": "MusicAlbum",
-        "id": 43,
-        "date": 1989,
-        "author": "Megadeth",
-        "genre": "Rock"
-      }
-    ]
+    "name": "Iron maiden"
+  },
+  {
+    "json_class": "Author",
+    "name": "Sin banderas"
+  },
+  {
+    "json_class": "Author",
+    "name": "Rawayana"
   }
 ]

@@ -17,16 +17,12 @@ class Author
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
-      'name' => @first_name,
-      'items' => @items
+      'name' => @first_name
     }.to_json(*args)
   end
 
   def self.json_create(author)
     author_data = new(author['name'], '')
-    author['items'].each do |item|
-      author_data.add_item(item)
-    end
     author_data
   end
 end

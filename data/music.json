@@ -1,9 +1,37 @@
 [
   {
     "json_class": "MusicAlbum",
-    "id": 43,
-    "date": 1989,
-    "author": "Megadeth",
+    "id": 512,
+    "date": 1234,
+    "author": "Iron maiden",
     "genre": "Rock"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 85,
+    "date": 123456879,
+    "author": "Iron maiden",
+    "genre": "Rock"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 109,
+    "date": 123456,
+    "author": "Sin banderas",
+    "genre": "Pop"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 475,
+    "date": 789456,
+    "author": "Sin banderas",
+    "genre": "Pop"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 503,
+    "date": 12374,
+    "author": "Rawayana",
+    "genre": "Reggae"
   }
 ]
