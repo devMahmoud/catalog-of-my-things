@@ -21,7 +21,6 @@ class Genre
   end
 
   def self.json_create(genre)
-    genre_data = new(genre['name'])
-    genre_data
+    new(genre['name'])
   end
 end

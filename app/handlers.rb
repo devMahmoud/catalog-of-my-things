@@ -26,9 +26,9 @@ module Handlers
     @genres << genre
   end
 
-  def if_has_genre(ar, input, album)
-    selected = ar.select {|genre| genre.name == input}
-    if selected.length > 0
+  def if_has_genre(arr, input, album)
+    selected = arr.select { |genre| genre.name == input }
+    if selected.length.positive?
       album.add_genre(selected[0])
     else
       genre = Genre.new(input)
@@ -43,9 +43,9 @@ module Handlers
     @authors << author
   end
 
-  def if_has_author(ar, input, album)
-    selected = ar.select {|author| author.first_name == input}
-    if selected.length > 0
+  def if_has_author(arr, input, album)
+    selected = arr.select { |author| author.first_name == input }
+    if selected.length.positive?
       album.add_author(selected[0])
     else
       author = Author.new(input, '')

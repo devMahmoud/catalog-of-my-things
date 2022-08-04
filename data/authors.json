@@ -10,5 +10,13 @@
   {
     "json_class": "Author",
     "name": "Backstreet boys"
+  },
+  {
+    "json_class": "Author",
+    "name": "Nirvana"
+  },
+  {
+    "json_class": "Author",
+    "name": "Killers"
   }
 ]

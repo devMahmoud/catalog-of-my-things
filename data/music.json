@@ -26,5 +26,19 @@
     "date": 2000,
     "author": "Backstreet boys",
     "genre": "Pop"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 262,
+    "date": 1999,
+    "author": "Nirvana",
+    "genre": "Rock"
+  },
+  {
+    "json_class": "MusicAlbum",
+    "id": 619,
+    "date": 120,
+    "author": "Killers",
+    "genre": "Rock"
   }
 ]

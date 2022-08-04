@@ -7,7 +7,8 @@ require 'json'
 require './handlers'
 
 class App
-attr_reader :books, :music, :games, :genres, :labels
+  attr_reader :books, :music, :games, :genres, :labels
+
   include Handlers
 
   def initialize
@@ -30,7 +31,6 @@ attr_reader :books, :music, :games, :genres, :labels
   end
 
   def list_all_books
-    p books
     books.each do |book|
       puts "Title: #{book.label.title}  Author: #{book.author} Genre: #{book.genre}"
     end
@@ -45,7 +45,6 @@ attr_reader :books, :music, :games, :genres, :labels
 
   def list_of_games; end
 
-  # rubocop:disable Style/ClassEqualityComparison
   def list_all_genres
     @genres.each do |genre|
       puts "[Genre] : #{genre.name}"
@@ -58,7 +57,11 @@ attr_reader :books, :music, :games, :genres, :labels
     end
   end
 
-  def list_all_authors; end
+  def list_all_authors
+    @authors.each do |author|
+      puts "[Author] : #{author.first_name}"
+    end
+  end
 
   # rubocop:disable Metrics/MethodLength
   def add_book
@@ -114,13 +117,10 @@ attr_reader :books, :music, :games, :genres, :labels
   def save_data
     File.write('../data/books.json', JSON.pretty_generate(@books))
     File.write('../data/labels.json', JSON.pretty_generate(@labels))
-  end
-
-  def add_game; end
-
-  def save_data
     File.write('../data/authors.json', JSON.pretty_generate(@authors))
     File.write('../data/genres.json', JSON.pretty_generate(@genres))
     File.write('../data/music.json', JSON.pretty_generate(@music))
   end
+
+  def add_game; end
 end

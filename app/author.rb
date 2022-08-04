@@ -22,7 +22,6 @@ class Author
   end
 
   def self.json_create(author)
-    author_data = new(author['name'], '')
-    author_data
+    new(author['name'], '')
   end
 end
