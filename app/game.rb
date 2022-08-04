@@ -1,7 +1,8 @@
-require './item'
+require_relative './item'
 
 class Game < Item
-  attr_reader :last_play_at
+  attr_accessor :last_play_at
+  attr_reader :multiplayer
 
   def initialize(multiplayer, last_play_at, publish_date)
     super(publish_date)

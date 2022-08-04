@@ -1,0 +1,35 @@
+[
+  {
+    "json_class": "Book",
+    "title": "Zecola",
+    "publisher": "Dar",
+    "cover_state": "good",
+    "publish_date": 2010,
+    "author": "Mahmoud",
+    "source": "online shop",
+    "genre": "comedy",
+    "id": 618
+  },
+  {
+    "json_class": "Book",
+    "title": "Book 2",
+    "publisher": "dar",
+    "cover_state": "bad",
+    "publish_date": 2000,
+    "author": "kabaka",
+    "source": "friend",
+    "genre": "comedy",
+    "id": 139
+  },
+  {
+    "json_class": "Book",
+    "title": "book 3",
+    "publisher": "me",
+    "cover_state": "good",
+    "publish_date": 2020,
+    "author": "Mahmoud",
+    "source": "online",
+    "genre": "comedy",
+    "id": 58
+  }
+]
