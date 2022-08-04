@@ -37,7 +37,11 @@ class App
     end
   end
 
-  def list_all_labels; end
+  def list_all_labels
+    @labels.each do |label|
+      puts "[Label] : #{label.title}"
+    end
+  end
 
   def list_all_authors; end
 
