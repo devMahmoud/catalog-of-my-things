@@ -1,0 +1,38 @@
+[
+  {
+    "json_class": "Game",
+    "title": "GTA V",
+    "last_play_at": 2020,
+    "multiplayer": false,
+    "publish_date": 2013,
+    "author": {
+      "json_class": "Author",
+      "name": "Author",
+      "last_name": null
+    },
+    "source": "Online shop",
+    "genre": {
+      "json_class": "Genre",
+      "name": "Action"
+    },
+    "id": 100
+  },
+  {
+    "json_class": "Game",
+    "title": "Mafia",
+    "last_play_at": 2021,
+    "multiplayer": false,
+    "publish_date": 2012,
+    "author": {
+      "json_class": "Author",
+      "name": "Author",
+      "last_name": "yyy"
+    },
+    "source": "Online shop",
+    "genre": {
+      "json_class": "Genre",
+      "name": "Fight"
+    },
+    "id": 4
+  }
+]

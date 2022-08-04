@@ -1,0 +1,20 @@
+[
+  {
+    "json_class": "Label",
+    "title": "book 1",
+    "color": "white",
+    "id": 913
+  },
+  {
+    "json_class": "Label",
+    "title": "GTA V",
+    "color": "white",
+    "id": 850
+  },
+  {
+    "json_class": "Label",
+    "title": "Mafia",
+    "color": "white",
+    "id": 627
+  }
+]
