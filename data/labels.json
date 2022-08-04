@@ -1,14 +1,8 @@
 [
   {
     "json_class": "Label",
-    "title": "Un dia mas",
+    "title": "Rust in peace",
     "color": "white",
-    "id": 213
-  },
-  {
-    "json_class": "Label",
-    "title": "Te vi venir",
-    "color": "white",
-    "id": 608
+    "id": 584
   }
 ]

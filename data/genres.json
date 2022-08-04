@@ -2,9 +2,5 @@
   {
     "json_class": "Genre",
     "name": "Rock"
-  },
-  {
-    "json_class": "Genre",
-    "name": "Pop"
   }
 ]

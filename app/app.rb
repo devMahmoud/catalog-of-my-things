@@ -39,7 +39,7 @@ class App
 
   def list_all_music_albums
     @music.each do |song|
-      puts "[Author] : #{song.author.first_name} [Album Title] : #{song.label.title} [Publish Date] : #{song.publish_date}  [Genre] : #{song.genre.name}"
+      puts "[Author] : #{song.author.first_name} [Title] : #{song.label.title} [Date] : #{song.publish_date}"
     end
   end
 
