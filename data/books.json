@@ -6,7 +6,19 @@
     "cover_state": "good",
     "publish_date": 2010,
     "author": "Mahmoud",
+    "source": "online shop",
+    "genre": "comedy",
+    "id": 618
+  },
+  {
+    "json_class": "Book",
+    "title": "Book 2",
+    "publisher": "dar",
+    "cover_state": "bad",
+    "publish_date": 2000,
+    "author": "kabaka",
     "source": "friend",
-    "genre": "comedy"
+    "genre": "comedy",
+    "id": 139
   }
 ]
