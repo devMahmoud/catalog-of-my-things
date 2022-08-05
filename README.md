@@ -7,7 +7,7 @@ This project is about a console app that will help you to keep a record of diffe
 ## Getting Started
 To get a local copy on this project on your machine follow these steps
 - Open your terminal
-- Run this comand:
+- Run this command:
 `git clone https://github.com/devMahmoud/catalog-of-my-things.git`
 ### Prerequisites
 - Make sure Ruby is installed
