@@ -1,0 +1,17 @@
+[
+  {
+    "json_class": "Book",
+    "title": "book 1",
+    "publisher": "publisher 1",
+    "cover_state": "good",
+    "publish_date": 2020,
+    "author": {
+      "json_class": "Author",
+      "name": "Author",
+      "last_name": null
+    },
+    "source": "Online shop",
+    "genre": "Comedy",
+    "id": 476
+  }
+]
