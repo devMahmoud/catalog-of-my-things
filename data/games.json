@@ -34,5 +34,23 @@
       "name": "Fight"
     },
     "id": 4
+  },
+  {
+    "json_class": "Game",
+    "title": "PES 2021",
+    "last_play_at": 2022,
+    "multiplayer": false,
+    "publish_date": 2021,
+    "author": {
+      "json_class": "Author",
+      "name": "Konami",
+      "last_name": null
+    },
+    "source": "Online shop",
+    "genre": {
+      "json_class": "Genre",
+      "name": "Footbal"
+    },
+    "id": 15
   }
 ]

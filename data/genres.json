@@ -10,5 +10,9 @@
   {
     "json_class": "Genre",
     "name": "Fight"
+  },
+  {
+    "json_class": "Genre",
+    "name": "Footbal"
   }
 ]

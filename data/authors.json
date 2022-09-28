@@ -13,5 +13,10 @@
     "json_class": "Author",
     "name": "Author",
     "last_name": "yyy"
+  },
+  {
+    "json_class": "Author",
+    "name": "Konami",
+    "last_name": null
   }
 ]

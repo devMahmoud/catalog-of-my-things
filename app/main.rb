@@ -1,4 +1,4 @@
-require './app'
+require_relative './app'
 
 class Main
   attr_reader :app

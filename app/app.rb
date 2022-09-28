@@ -1,11 +1,11 @@
-require './music_album'
-require './genre'
-require './author'
-require './book'
-require './game'
-require './label'
+require_relative './music_album'
+require_relative './genre'
+require_relative './author'
+require_relative './book'
+require_relative './game'
+require_relative './label'
 require 'json'
-require './handlers'
+require_relative './handlers'
 
 # rubocop:disable Metrics/ClassLength
 class App

@@ -16,5 +16,11 @@
     "title": "Mafia",
     "color": "white",
     "id": 627
+  },
+  {
+    "json_class": "Label",
+    "title": "PES 2021",
+    "color": "white",
+    "id": 41
   }
 ]
